@@ -305,7 +305,28 @@ form {
 .send-btn:hover {
     background-color: #0056b3;
 }
+.mobile-close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 9999;
+    color: white;
+    font-size: 24px;
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.mobile-close-btn:hover {
+    color: #ccc;
+}
+
+/* Show close button only in mobile view when sidebar is open */
+@media (max-width: 991px) {
+    .mobile-nav-toggle:checked ~ div .side1 .mobile-close-btn {
+        display: block;
+    }
+}
 
 
 
