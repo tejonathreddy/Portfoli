@@ -230,6 +230,9 @@ li {
 
 .Projects{
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .sixth{
     display: flex;
