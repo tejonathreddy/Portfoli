@@ -1,9 +1,7 @@
 body{
     display: grid;
-    gap: 5px;
     grid-template-columns: 300px auto;
     height: 100vh;
-    background-color: chartreuse;
 }
 .side1{
     background-color: rgb(192, 76, 72);
