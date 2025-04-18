@@ -412,3 +412,24 @@ form {
         margin-left: 0;
     }
 }
+.dupli{
+    display: none;
+}
+@media (max-width: 768px) {
+    .orig {
+        display: none; /* Hide original on mobile */
+    }
+    .dupli{
+        display: block;
+        
+    }
+}
+/* Add to your CSS */
+.about, .resume, .Projects, .contact {
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
