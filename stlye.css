@@ -380,7 +380,6 @@ form {
 .orig {
     display: block;
     text-align: center;
-    margin: 20px auto;
 }
 
 .orig img {
@@ -416,7 +415,7 @@ form {
 }
 
 /* Responsive styles */
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
     body {
         grid-template-columns: 1fr;
     }
