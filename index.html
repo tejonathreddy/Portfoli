@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejonath-Reddy-Kukutla</title>
-    <link rel="stylesheet" href="./stlye.css">
+    <title>Tejonath Reddy Kukutla - Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle">
     
     <!-- Mobile toggle label (visible as hamburger icon) -->
     <label for="mobile-nav-toggle" class="mobile-nav-toggle-label">
         <i class="fa-solid fa-bars"></i>
     </label>
+    
     <div>
         <div class="side1">
             <label for="mobile-nav-toggle" class="mobile-close-btn">
@@ -22,279 +35,413 @@
             <div class="mainbar">
                 <div class="part-1">
                     <div class="pic mt-5">
-                        <img src="./Assets/Passport_Photograph.jpg" alt="" class="img-fluid" style="border-radius: 100%;height: 150px; width: 150px;">
+                        <div class="profile-container">
+                            <img src="./Assets/Passport_Photograph.jpg" alt="Profile" class="img-fluid profile-img">
+                            <div class="profile-ring"></div>
+                        </div>
                     </div>
                     
-                    
-                    <div><a href="./index.html" class="brand"><h5 style="text-align: center;">Kukutla Tejonath Reddy</h5></a></div>
+                    <div><a href="./index.html" class="brand"><h5 class="name-title">Kukutla Tejonath Reddy</h5></a></div>
+                    <div class="typing-container">
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
 
                     <div class="social-media">
                         <div class="images-sm">
-                            <span class="iteam"><a href="https://www.instagram.com/tejonath_reddy/"><i class="fa-brands fa-instagram"></i></a></span>
-                            <span class="iteam"><a href="https://www.facebook.com/tejonathnani/"><i class="fa-brands fa-facebook"></i></a></i></span>
-                            <span class="iteam"><a href="https://github.com/tejonathreddy/"><i class="fa-brands fa-github"></i></a></span>
-                            <span class="iteam"><a href="https://www.linkedin.com/in/tejonath-reddy-kukutla/"><i class="fa-brands fa-linkedin"></i></a></span>
+                            <span class="iteam" data-tooltip="Instagram"><a href="https://www.instagram.com/tejonath_reddy/"><i class="fa-brands fa-instagram"></i></a></span>
+                            <span class="iteam" data-tooltip="Facebook"><a href="https://www.facebook.com/tejonathnani/"><i class="fa-brands fa-facebook"></i></a></span>
+                            <span class="iteam" data-tooltip="GitHub"><a href="https://github.com/tejonathreddy/"><i class="fa-brands fa-github"></i></a></span>
+                            <span class="iteam" data-tooltip="LinkedIn"><a href="https://www.linkedin.com/in/tejonath-reddy-kukutla/"><i class="fa-brands fa-linkedin"></i></a></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="part-2 m-4 ms-5">
-                    <a href="#one" class="one" style="font-size: 25px;">
-                        <i class="fa-solid fa-house" style="margin-right: 10px;"></i>Home
+                    <a href="#one" class="nav-link active" data-section="one">
+                        <i class="fa-solid fa-house"></i>Home
                     </a>
-                    <div>
-                        <a href="#About" class="user" style="font-size: 25px;">
-                            <i class="fa-solid fa-user" style="margin-right: 10px;"></i>About
-                        </a>                        
-                    </div>
-                    <div>
-                        <a href="#Resume" class="third" style="font-size: 25px;">
-                            <i class="fa-solid fa-file" style="margin-right: 10px;"></i> Resume
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#Projects" class="proj" style="font-size: 25px;">
-                            <i class="fa-solid fa-folder" style="margin-right: 10px;"></i>
-                            Project
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#Contact" class="proj" style="font-size: 25px;">
-                            <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>
-                            Contact
-                        </a>
-                    </div>
+                    <a href="#About" class="nav-link" data-section="About">
+                        <i class="fa-solid fa-user"></i>About
+                    </a>
+                    <a href="#Resume" class="nav-link" data-section="Resume">
+                        <i class="fa-solid fa-file"></i>Resume
+                    </a>
+                    <a href="#Projects" class="nav-link" data-section="Projects">
+                        <i class="fa-solid fa-folder"></i>Projects
+                    </a>
+                    <a href="#Contact" class="nav-link" data-section="Contact">
+                        <i class="fa-solid fa-phone"></i>Contact
+                    </a>
                 </div>
-                
             </div>
         </div>
     </div>
+    
     <div>
         <div class="side2" id="one">
-            <!-- 1st page -->
-            <div class="orig"><img src="./Assets/123.jpg" alt="" style="height: 100vh; overflow: hidden; width: 100%; object-fit: cover; margin-bottom: 50px;" class="img-fluid"></div>
-            <!-- 2nd Page -->
-            <div class="ms-4 about" id="About">
-                <h1>About</h1>
-                <p class="mt-5">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to My Portfolio</h1>
+                    <p class="hero-subtitle">Cybersecurity Researcher & Full Stack Developer</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('About')">Learn More</button>
+                        <button class="btn-secondary" onclick="scrollToSection('Contact')">Get In Touch</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./Assets/123.jpg" alt="Hero" class="hero-img">
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="section-container about fade-in" id="About">
+                <div class="section-header">
+                    <h1 class="section-title">About Me</h1>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-description">
                     Hi, I'm Kukutla Tejonath Reddy, a Cyber Security enthusiast and Computer Science graduate from Kalasalingam University. I have a passion for cybersecurity, AI, and software testing, with hands-on experience through research, internships, and freelancing. I co-founded CyberNerds, a university club dedicated to security awareness, and have published research articles in the field.
-
-Currently, I’m enhancing my skills by pursuing a Java Full Stack Development course to expand my expertise in software development and web technologies.
-
                 </p>
                 <div class="about-details">
-                    <div>
-                        <img src="./Assets/IMG_20240310_203007_006 (1).jpg" alt="" style="height: 500px; border-radius: 10px;">
+                    <div class="about-image">
+                        <img src="./Assets/IMG_20240310_203007_006 (1).jpg" alt="About" class="about-img">
                     </div>
-                    <div>
-                        <h1>Java Full Stack Developer</h1>
-                        <p>I'm expanding my skill set in software development by pursuing a Java Full Stack Development course to bridge the gap between security and development. I am passionate about building secure and efficient applications while exploring the latest trends in cybersecurity and web technologies.</p>
-                        <div class="about-details-inner">
-                            <div class="about-column">
-                                <p><i class="fas fa-chevron-right"></i> <b>Birthday:</b> 9 Oct 2002</p>
-                                <p><i class="fas fa-chevron-right"></i> <b>Phone:</b> +91-9391763348</p>
-                                <p><i class="fas fa-chevron-right"></i> <b>City:</b> Kurnool, Andhra Pradesh</p>
-                                <p><i class="fas fa-chevron-right"></i> <b>Email:</b> tejonath45@gmail.com</p>
+                    <div class="about-content">
+                        <h2 class="about-title">Java Full Stack Developer</h2>
+                        <p class="about-text">I'm expanding my skill set in software development by pursuing a Java Full Stack Development course to bridge the gap between security and development. I am passionate about building secure and efficient applications while exploring the latest trends in cybersecurity and web technologies.</p>
+                        <div class="about-details-grid">
+                            <div class="detail-item">
+                                <i class="fas fa-birthday-cake"></i>
+                                <span><strong>Birthday:</strong> 9 Oct 2002</span>
                             </div>
-                            <div class="about-column">
-                                <p><i class="fas fa-chevron-right"></i> <b>Age:</b> 22</p>
-                                <p><i class="fas fa-chevron-right"></i> <b>Degree:</b> B.Tech</p>
-                                <p><i class="fas fa-chevron-right"></i> <b>Freelance:</b> Available</p>
+                            <div class="detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span><strong>Phone:</strong> +91-9391763348</span>
                             </div>
-                        </div> 
-                        <p>I have experience in cybersecurity research, having completed an IIPP Research Internship at Asia University, Taiwan, where I published articles on Cybersecurity, AI, and Machine Learning. I also co-founded CyberNerds, a university club focused on security awareness, where we conducted workshops and events.</p>                       
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>City:</strong> Kurnool, AP</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span><strong>Email:</strong> tejonath45@gmail.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Age:</strong> 22</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span><strong>Degree:</strong> B.Tech</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Third page -->
-            <div class="ms-3 third_1" id="Resume">
-                <div class="resume">
-                    <div><h1>Resume</h1></div>
-                    <a href="./Assets/TEJONATH_REDDY_KUKUTLA.pdf" download="TEJONATH_REDDY_KUKUTLA.pdf"><button style="height: 30px; border-radius: 5px; background-color: cornflowerblue;"><i class="fa-solid fa-download"></i></button></a>
+
+            <!-- Resume Section -->
+            <div class="section-container resume-section fade-in" id="Resume">
+                <div class="section-header">
+                    <h1 class="section-title">Resume</h1>
+                    <div class="section-line"></div>
+                    <a href="./Assets/TEJONATH_REDDY_KUKUTLA.pdf" download="TEJONATH_REDDY_KUKUTLA.pdf" class="download-btn">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
                 </div>
-                <p>Cyber Security Researcher & Aspiring Full Stack Developer with expertise in security research, software development, and digital forensics. Published articles on Cybersecurity, AI, and ML and co-founded CyberNerds, a university cybersecurity club. Currently upskilling in Java Full Stack Development to merge security with software engineering.</p>
-                <div class="Education-details">
-                    <div class="Schooling">
-                        <h2>Education</h2>
-                        <div class="ms-3">
-                            <div>
-                            <h3>School</h3>
-                            <h4>DR.KKR Gowtham Concept School</h4>
-                            <p>2017-2018 Batch</p>
-                            <p>I have completed my 10th class with 9.5 CGPA in Andhra Pradesh</p>
+                <p class="section-description">Cyber Security Researcher & Aspiring Full Stack Developer with expertise in security research, software development, and digital forensics.</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline-section">
+                        <h2 class="timeline-title">Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>B.Tech Computer Science (Cybersecurity)</h3>
+                                    <h4>Kalasalingam Academy of Research and Education</h4>
+                                    <span class="timeline-date">2020 - 2024</span>
+                                    <p>Graduated with CGPA of 7.79/10 specializing in Cybersecurity</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3>Intermediate</h3>
-                                <h4>Narayana Junior Collage</h4>
-                                <p>2018 - 2020 Batch</p>
-                                <p>I have my Intermediate in Narayana Junior collage Madhapur, Hyderabad With a percentage of 80.3%</p>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Intermediate</h3>
+                                    <h4>Narayana Junior College</h4>
+                                    <span class="timeline-date">2018 - 2020</span>
+                                    <p>Completed with 80.3% at Madhapur, Hyderabad</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3>BTech</h3>
-                                <h4>Kalasalingam Academy of Research and Education</h4>
-                                <p>2020 - 2024 Batch</p>
-                                <p>I have graduate form Kalasalingam Academy Of Research and Education in CSE(Cybersecurity) with a CGPA of 7.79/10</p>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Secondary School</h3>
+                                    <h4>DR.KKR Gowtham Concept School</h4>
+                                    <span class="timeline-date">2017 - 2018</span>
+                                    <p>Completed 10th class with 9.5 CGPA</p>
+                                </div>
                             </div>
                         </div>
-                        
+                    </div>
+
+                    <div class="timeline-section">
+                        <h2 class="timeline-title">Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Research Internship</h3>
+                                    <h4>IIPP Research Program</h4>
+                                    <span class="timeline-date">Sep 2023 - Nov 2023</span>
+                                    <ul>
+                                        <li>Worked under Prof. Brij B. Gupta on Cybersecurity, AI, and ML research</li>
+                                        <li>Published multiple research articles and magazine features</li>
+                                        <li><a href="https://insights2techinfo.com/?s=Kukutla+tejonath+reddy+" target="_blank">View Publications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section-container skills-section fade-in">
+                <div class="section-header">
+                    <h1 class="section-title">Skills</h1>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-description">Here are some of the technical and professional skills I've developed through academics, internships, and hands-on projects.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-percentage">100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percentage">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="internship">
-                        <h4>Internship Experience</h4>
-                        <div>
-                            <div>
-                                <h3>Research Internship</h3>
-                                <h4>IIPP research Internship</h4>
-                                <p>Sep 1st, 2023 – Nov 30th, 2023</p>
-                                <ul>
-                                    <li>Worked under the guidance of Prof. Brij B. Gupta on research topics related to Cybersecurity, Artificial Intelligence, and Machine Learning.</li>
-                                    <li>Successfully completed a research project and published multiple articles and magazine features.</li>
-                                    <li>Publications available at: <a href="https://insights2techinfo.com/?s=Kukutla+tejonath+reddy+#google_vignette" style="text-decoration: none;" target="_blank"><b>Click Here</b></a></li>
-                                </ul>
-                                </div>
+                    <div class="skill-category">
+                        <h3>Security & Tools</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Cybersecurity</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Digital Forensics</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- fourth sec -->
-             <div class="skills ms-3">
-                <div><h1>Skills</h1></div>
-                <div><p>Here are some of the technical and professional skills I've developed through academics, internships, and hands-on projects.</p></div>
-                <div class="fourth">
-                    <div>
-                        <ul>
-                            <li>
-                                <span>HTML/CSS</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 100%;"></div>
-                                </div>
-                                <span class="percentage">100%</span>
-                            </li>
-                            <li>
-                                <span>SQL</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 60%;"></div>
-                                </div>
-                                <span class="percentage">60%</span>
-                            </li>
-                            <li>
-                                <span>Cybersecurity Concepts</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 75%;"></div>
-                                </div>
-                                <span class="percentage">75%</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <span>Digital Forensics (FTK Imager,etc.)</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 80%;"></div>
-                                </div>
-                                <span class="percentage">80%</span>
-                            </li>
-                            <li>
-                                <span>Linux</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 80%;"></div>
-                                </div>
-                                <span class="percentage">80%</span>
-                            </li>
-                            <li>
-                                <span>Problem Sovling</span>
-                                <div class="language">
-                                    <div class="skill-bar" style="width: 100%;"></div>
-                                </div>
-                                <span class="percentage">100%</span>
-                            </li>
-                        </ul>
-                    </div>
+
+            <!-- Projects Section -->
+            <div class="section-container projects-section fade-in" id="Projects">
+                <div class="section-header">
+                    <h1 class="section-title">Projects</h1>
+                    <div class="section-line"></div>
                 </div>
+                <p class="section-description">Here are some of the projects I've worked on to apply my skills and explore real-world applications in cybersecurity and development.</p>
                 
-
-             </div>
-             <!-- Fifth section -->
-              <div class="Projects ms-3" id="Projects">
-                <div><h1>Projects</h1></div>
-                <div><p>Here are some of the projects I've worked on to apply my skills and explore real-world applications in cybersecurity and development.</p></div>
-                <div class="Fifth">
-                    <div class="project-1"><a href="https://youtu.be/OciOqtx7KAA?si=6gtOh2KTaKp7FlYp" target="_blank"><img src="https://www.emsisoft.com/en/blog/wp-content/uploads/2017/09/trojan-horse-virus-removal-blog.png" alt="" style="height: 200px; border-radius: 20px;"><div class="project-title">🎮 Fake Gaming Website with Embedded Trojan</div></a></div>
-                    <div class="project-1">
-                        <a href="https://idyllic-sprinkles-03e207.netlify.app/" target="_blank"><img src="./Assets/1.png" alt="" style="height: 200px;width: 350px; border-radius: 20px;"><div class="project-title">✨ Responsive Travel Blog UI</div></a>
-                    </div>
-                    <div class="project-1">
-                        <a href="https://tejonath.netlify.app/" target="_blank"><img src="./Assets/image.png" alt="" style="height: 200px;width: 350px; border-radius: 20px;"><div class="project-title">✨ Filpkart Clone</div></a>
-                    </div>
-                </div>
-                <div><h4 style="margin-top: 20px;">🧠 Research & Publications </h4></div>
-                <div><p>I have published multiple articles related to Cybersecurity, Artificial Intelligence, and Machine Learning during my IIPP Research Internship under the guidance of Prof. Brij B. Gupta. These articles are available across the following platforms:</p></div>
-                <div>
-                    <ul>
-                        <li>🔗 Insights2Techinfo: <a href="https://insights2techinfo.com/?s=tejonath+reddy" style="text-decoration: none; color: #000;" target="_blank"><b>Click Here</b></a></li>
-                        <li>📘 ResearchGate: <a href="https://www.researchgate.net/profile/Tejonath-Reddy-Kukutla/stats" style="text-decoration: none; color: #000;" target="_blank"><b>Click Here</b></a></li>
-                        <li>🎓 Google Scholar: <a href="https://scholar.google.com/citations?user=VDwZrtYAAAAJ&hl=en" style="text-decoration: none; color: #000;" target="_blank" ><b>Click Here</b></a></li>
-                    </ul>
-                </div>
-
-              </div>
-              <!-- Contact -->
-               <div class="contact ms-3" id="Contact">
-                    <div><h1>Contact</h1></div>
-                    <div><p>Feel free to reach out to me through any of the platforms below</p></div>
-                    <div class="sixth">
-                        <div class="calldetails">
-                            <div class="address">
-                                <div class="iteam"><i class="fas fa-map-marker-alt"></i>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="https://www.emsisoft.com/en/blog/wp-content/uploads/2017/09/trojan-horse-virus-removal-blog.png" alt="Trojan Project">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://youtu.be/OciOqtx7KAA?si=6gtOh2KTaKp7FlYp" target="_blank" class="project-link">
+                                        <i class="fa-solid fa-external-link"></i>
+                                    </a>
                                 </div>
-                                <div><h5>Address</h5> <span>LIG-51-86/181,Housing board colony, Bcamp,Kurnool,518001</span></div>
-                            </div>
-                            <div class="address">
-                                <div class="iteam"><i class="fa-solid fa-phone"></i></div>
-                                <div><h5>Call Us</h5> <span>+91-9391763348</span></div>
-                            </div>
-                            <div class="address">
-                                <div class="iteam"><i class="fa-solid fa-envelope"></i></div>
-                                <div><h5>Email</h5> <span>tejonath45@gmail.com</span></div>
-                            </div>
-                            <div class="address">
-                                <div><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3839.175414619167!2d78.0371700749741!3d15.79470198484569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1744629797206!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="form-container">
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="name">Your Name</label>
-                                            <input type="text" id="name" placeholder="Enter your name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Your Email</label>
-                                            <input type="email" id="email" placeholder="Enter your email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="subject">Subject</label>
-                                        <input type="text" id="subject" placeholder="Subject">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea id="message" rows="6" placeholder="Type your message here..."></textarea>
-                                    </div>
-                                    <button type="submit" class="send-btn">Send Message</button>
-                                </form>
-                            </div>
-                            
+                        <div class="project-content">
+                            <h3>🎮 Fake Gaming Website with Embedded Trojan</h3>
+                            <p>Cybersecurity demonstration project showcasing social engineering techniques</p>
                         </div>
                     </div>
-               </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="./Assets/1.png" alt="Travel Blog">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://idyllic-sprinkles-03e207.netlify.app/" target="_blank" class="project-link">
+                                        <i class="fa-solid fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>✨ Responsive Travel Blog UI</h3>
+                            <p>Modern, responsive travel blog with beautiful UI/UX design</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="./Assets/image.png" alt="Flipkart Clone">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://tejonath.netlify.app/" target="_blank" class="project-link">
+                                        <i class="fa-solid fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>✨ Flipkart Clone</h3>
+                            <p>E-commerce platform clone with modern web technologies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-section">
+                    <h2 class="research-title">🧠 Research & Publications</h2>
+                    <p>I have published multiple articles related to Cybersecurity, Artificial Intelligence, and Machine Learning during my IIPP Research Internship under the guidance of Prof. Brij B. Gupta.</p>
+                    <div class="research-links">
+                        <a href="https://insights2techinfo.com/?s=tejonath+reddy" target="_blank" class="research-link">
+                            <i class="fa-solid fa-link"></i>
+                            <span>Insights2Techinfo</span>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Tejonath-Reddy-Kukutla/stats" target="_blank" class="research-link">
+                            <i class="fa-brands fa-researchgate"></i>
+                            <span>ResearchGate</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=VDwZrtYAAAAJ&hl=en" target="_blank" class="research-link">
+                            <i class="fa-brands fa-google"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="section-container contact-section fade-in" id="Contact">
+                <div class="section-header">
+                    <h1 class="section-title">Contact Me</h1>
+                    <div class="section-line"></div>
+                </div>
+                <p class="section-description">Feel free to reach out to me through any of the platforms below</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Address</h5>
+                                <span>LIG-51-86/181, Housing board colony, Bcamp, Kurnool, 518001</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Call Us</h5>
+                                <span>+91-9391763348</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <span>tejonath45@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3839.175414619167!2d78.0371700749741!3d15.79470198484569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1744629797206!5m2!1sen!2sin" 
+                                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="6" required></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                            <button type="submit" class="send-btn">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/205bf02071.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
